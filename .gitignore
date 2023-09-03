@@ -50,3 +50,19 @@ modules.order
 Module.symvers
 Mkfile.old
 dkms.conf
+
+#IAR Embedded Workbench Files
+*.eww
+*.ewp
+*.ewd
+*.dep
+*.db
+*.pca
+*.sct
+*.lst
+*.crf
+*.sre
+*.ewt
+*.xml
+/settings/
+/Debug/
