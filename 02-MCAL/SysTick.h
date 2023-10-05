@@ -1,8 +1,15 @@
+/******************************************************************
+ * @Title    : System Tick Driver Header
+ * @Filename : SysTick.h
+ * @Author   : Hossam Mohamed
+ * @Compiler : IAR
+ * @Target   : Tiva-C (Tm4c123gh6pm)
+ ********************************************************************/
 #ifndef SYS_TICK_H_
 #define SYS_TICK_H_
 
-#include "../01-LIB/BIT_MACROS.h"
-#include "../01-LIB/STD_TYPES.h"
+#include "BIT_MACROS.h"
+#include "STD_TYPES.h"
 
 typedef enum
 {
@@ -20,10 +27,13 @@ typedef enum
 typedef struct
 {
 	SysTick_CLK_SRC ClkSrc;
-	SysTick_INT Int;
-	uint32 ReloadValue;
+	SysTick_INT		Int;
+	uint32			ReloadValue;
 } SysTick_ConfigType;
 
-void SysTick_init(SysTick_ConfigType *Config_Ptr);
+void SysTick_init(SysTick_ConfigType* Config_Ptr);
+void SysTick_SetPriority(uint8 ExceptionPriority);
+void SysTick_enableException(void);
+void SysTick_disableException(void);
 
 #endif /* SYS_TICK_H_ */
