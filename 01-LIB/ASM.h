@@ -9,18 +9,27 @@
 #define ASM_H
 
 /* Enable Exceptions ... This Macro enables IRQ interrupts, Programmable Systems Exceptions, and Faults by clearing the I-bit in the PRIMASK. */
-#define Enable_Exceptions() __asm("CPSIE I")
+#define Enable_Exceptions() 	__asm("CPSIE I")
 
 /* Disable Exceptions ... This Macro disables IRQ interrupts, Programmable Systems Exceptions, and Faults by setting the I-bit in the PRIMASK. */
-#define Disable_Exceptions() __asm("CPSID I")
+#define Disable_Exceptions() 	__asm("CPSID I")
 
 /* Enable Faults ... This Macro enables Faults by clearing the F-bit in the FAULTMASK. */
-#define Enable_Faults() __asm("CPSIE F")
+#define Enable_Faults() 		__asm("CPSIE F")
 
 /* Disable Faults ... This Macro disables Faults by setting the F-bit in the FAULTMASK. */
-#define Disable_Faults() __asm("CPSID F")
+#define Disable_Faults() 		__asm("CPSID F")
 
 /* Go to low-power mode while waiting for the next interrupt. */
-#define Wait_For_Interrupt() __asm("WFI")
+#define Wait_For_Interrupt() 	__asm("WFI")
+
+/* Data memory barrier instruction */
+#define DMB()                  	__asm("DMB")
+
+/* Data synchronization barrier instruction */
+#define DSB()                  	__asm("DSB")
+
+/* Instruction synchronization barrier instruction */
+#define ISB()                  	__asm("ISB")
 
 #endif /* ASM_H */
